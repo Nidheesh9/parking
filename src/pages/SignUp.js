@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const SignUp = ({login,setLogin}) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [secondName, setSecondName] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [dob, setDob] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSubmit = (e) => {
@@ -14,31 +16,44 @@ const SignUp = ({login,setLogin}) => {
       return;
     }
     // Handle signup logic here (e.g., send data to the backend)
-    console.log('Name:', name);
+    console.log('Name:', firstName);
     console.log('Email:', email);
     console.log('Password:', password);
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100 background">
+    <div className="flex justify-center items-center h-[95vh] background">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-8">Sign Up</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-6">
-            <label className="block text-gray-600 font-medium mb-2" htmlFor="name">
-              Name
+          <div className="mb-2">
+            <label className="block text-gray-600 font-medium mb-1" htmlFor="name">
+              Firstname
             </label>
             <input
               type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              id="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
             />
           </div>
-          <div className="mb-6">
-            <label className="block text-gray-600 font-medium mb-2" htmlFor="email">
+          <div className="mb-2">
+            <label className="block text-gray-600 font-medium mb-1" htmlFor="name">
+              Secondname
+            </label>
+            <input
+              type="text"
+              id="secondName"
+              value={secondName}
+              onChange={(e) => setSecondName(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div className="mb-2">
+            <label className="block text-gray-600 font-medium mb-1" htmlFor="email">
               Email
             </label>
             <input
@@ -50,8 +65,21 @@ const SignUp = ({login,setLogin}) => {
               required
             />
           </div>
-          <div className="mb-6">
-            <label className="block text-gray-600 font-medium mb-2" htmlFor="password">
+          <div className="mb-2">
+            <label className="block text-gray-600 font-medium mb-1" htmlFor="email">
+              Date of Birth
+            </label>
+            <input
+              type="date"
+              id="dob"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div className="mb-2">
+            <label className="block text-gray-600 font-medium mb-1" htmlFor="password">
               Password
             </label>
             <input
@@ -63,8 +91,8 @@ const SignUp = ({login,setLogin}) => {
               required
             />
           </div>
-          <div className="mb-6">
-            <label className="block text-gray-600 font-medium mb-2" htmlFor="confirmPassword">
+          <div className="mb-2">
+            <label className="block text-gray-600 font-medium mb-1" htmlFor="confirmPassword">
               Confirm Password
             </label>
             <input
@@ -83,7 +111,7 @@ const SignUp = ({login,setLogin}) => {
             Sign Up
           </button>
         </form>
-        <p className="text-center text-gray-500 text-sm mt-6">
+        <p className="text-center text-gray-500 text-sm mt-1">
           Already have an account? <Link to='/' className="text-blue-500 hover:underline" onClick={()=>setLogin(!login)}>Log in</Link>
         </p>
       </div>

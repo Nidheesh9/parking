@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = ({login,setLogin}) => {
     const [loggedIn,setLoggedIn] = useState(false);
   return (
-    <nav className="bg-blue-500 p-4 shadow-lg">
+    <nav className="bg-blue-500 p-2 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-2xl font-bold">
           Parking Management

@@ -51,7 +51,7 @@ const Login = ({login,setLogin}) => {
           </button>
         </form>
         <p className="text-center text-gray-500 text-sm mt-6">
-          Don't have an account? <Link to='/signup' className="text-blue-500 hover:underline" onClick={()=>setLogin(!login)}>Sign up</Link>
+          Don't have an account? <Link to='/' className="text-blue-500 hover:underline" onClick={()=>setLogin(!login)}>Sign up</Link>
         </p>
       </div>
     </div>
